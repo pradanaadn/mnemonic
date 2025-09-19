@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/pradanaadn/mnemonic/compare/v1.1.0...v1.2.0) (2025-09-19)
+
+
+### Features
+
+* add project version utility to read and parse version from package.json ([10ee402](https://github.com/pradanaadn/mnemonic/commit/10ee40206ed30b0fb4e32a68f2e9db848c9bf4d4))
+
 # [1.1.0](https://github.com/pradanaadn/mnemonic/compare/v1.0.0...v1.1.0) (2025-09-19)
 
 
