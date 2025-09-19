@@ -10,7 +10,8 @@
     "docker-up": "docker-compose up -d",
     "docker-down": "docker-compose down",
     "docker-logs": "docker-compose logs -f",
-    "docker-restart": "docker-compose restart"
+    "docker-restart": "docker-compose restart",
+    "prepare": "husky"
   },
   "dependencies": {
     "dotenv": "^17.2.2",
@@ -19,11 +20,18 @@
     "pg": "^8.16.3"
   },
   "devDependencies": {
+    "@eslint/js": "^9.35.0",
     "@types/express": "^5.0.3",
     "@types/node": "^24.5.2",
     "@types/pg": "^8.15.5",
     "drizzle-kit": "^0.31.4",
+    "eslint": "^9.35.0",
+    "globals": "^16.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.6",
+    "prettier": "^3.6.2",
     "tsx": "^4.20.5",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.44.0"
   }
 }
