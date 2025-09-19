@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/pradanaadn/mnemonic/compare/v1.0.0...v1.1.0) (2025-09-19)
+
+
+### Features
+
+* expand sample environment configuration with additional settings ([573a90a](https://github.com/pradanaadn/mnemonic/commit/573a90a00b34768a6d122bef2544d873f0dd99c3))
+
 # 1.0.0 (2025-09-19)
 
 ### Features
