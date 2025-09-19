@@ -29,7 +29,13 @@
     "noUncheckedIndexedAccess": true
   },
   "include": ["src/**/*", "*.ts", "*.js"],
-  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "commitlint.config.ts"
+  ],
   "ts-node": {
     "esm": false
   }
