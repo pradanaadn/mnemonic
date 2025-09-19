@@ -1,0 +1,15 @@
+{
+  "name": "mnemonic",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "docker-up": "docker-compose up -d",
+    "docker-down": "docker-compose down",
+    "docker-logs": "docker-compose logs -f",
+    "docker-restart": "docker-compose restart"
+  }
+}
