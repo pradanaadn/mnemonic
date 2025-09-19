@@ -36,6 +36,7 @@ services:
     networks:
       - mnemonic-network
     init: true
+    # Automatically generate servers.json on container start. Auto connect to PostgreSQL.
     command: >
       sh -c "
         cat > /pgadmin4/servers.json << EOF
