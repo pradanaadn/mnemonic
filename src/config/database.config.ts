@@ -18,6 +18,4 @@ const dbConfig: DbConfig = {
   database: process.env['POSTGRES_DB'] || 'database',
 };
 
-console.log('Database Configuration:', dbConfig); // Debugging line to check values
-
 export default dbConfig;
