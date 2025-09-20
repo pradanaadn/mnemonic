@@ -17,7 +17,10 @@
     "version:major": "npm version major && git push --follow-tags",
     "semantic-release": "semantic-release",
     "lint": "eslint src/**/*.{js,ts,tsx}",
-    "lint:fix": "eslint src/**/*.{js,ts,tsx} --fix"
+    "lint:fix": "eslint src/**/*.{js,ts,tsx} --fix",
+    "drizzle:push": "drizzle-kit push",
+    "drizzle:migrate": "drizzle-kit migrate",
+    "drizzle:generate": "drizzle-kit generate"
   },
   "dependencies": {
     "dotenv": "^17.2.2",

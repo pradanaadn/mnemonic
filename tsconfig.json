@@ -33,7 +33,7 @@
       "@config": ["config/index"]
     }
   },
-  "include": ["src/**/*", "*.ts", "*.js"],
+  "include": ["src/**/*", "*.js"],
   "exclude": [
     "node_modules",
     "dist",
