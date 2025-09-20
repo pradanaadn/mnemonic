@@ -23,6 +23,8 @@
     "drizzle:generate": "drizzle-kit generate"
   },
   "dependencies": {
+    "@types/argon2": "^0.14.1",
+    "argon2": "^0.44.0",
     "dotenv": "^17.2.2",
     "drizzle-orm": "^0.44.5",
     "express": "^5.1.0",
