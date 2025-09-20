@@ -26,7 +26,11 @@
     "exactOptionalPropertyTypes": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
-    "noUncheckedIndexedAccess": true
+    "noUncheckedIndexedAccess": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@logger": ["libs/helper/logger"]
+    }
   },
   "include": ["src/**/*", "*.ts", "*.js"],
   "exclude": [
