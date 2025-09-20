@@ -29,10 +29,11 @@
     "noUncheckedIndexedAccess": true,
     "baseUrl": "./src",
     "paths": {
-      "@logger": ["libs/helper/logger"]
+      "@logger": ["libs/helper/logger"],
+      "@config": ["config/index"]
     }
   },
-  "include": ["src/**/*", "*.ts", "*.js"],
+  "include": ["src/**/*", "*.js"],
   "exclude": [
     "node_modules",
     "dist",
