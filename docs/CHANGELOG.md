@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/pradanaadn/mnemonic/compare/v1.2.0...v1.3.0) (2025-09-20)
+
+
+### Features
+
+* update logger implementation and add path mapping for logger module ([d8db4c3](https://github.com/pradanaadn/mnemonic/commit/d8db4c332478a45bc1edb2ebf77a16456bcc4375))
+
 # [1.2.0](https://github.com/pradanaadn/mnemonic/compare/v1.1.0...v1.2.0) (2025-09-19)
 
 
