@@ -1,3 +1,13 @@
+# [1.4.0](https://github.com/pradanaadn/mnemonic/compare/v1.3.0...v1.4.0) (2025-09-20)
+
+
+### Features
+
+* add database configuration and ORM schema definitions ([f230f88](https://github.com/pradanaadn/mnemonic/commit/f230f88a2e81a4010fac51ac21129cf288f227e7))
+* add initial database configuration and schema definitions ([0e5d510](https://github.com/pradanaadn/mnemonic/commit/0e5d510812a37666b475fc5b96993ee21b4b47fa))
+* remove debugging console log from database configuration ([04103d6](https://github.com/pradanaadn/mnemonic/commit/04103d62655612b5e3160aff56966b418a2c6883))
+* update sample environment configuration with database host and port ([7cc1ad1](https://github.com/pradanaadn/mnemonic/commit/7cc1ad192c6932622bf8d7ae5c5b85b313ee5e0f))
+
 # [1.3.0](https://github.com/pradanaadn/mnemonic/compare/v1.2.0...v1.3.0) (2025-09-20)
 
 
