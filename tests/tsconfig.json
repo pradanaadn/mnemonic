@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "types": ["jest"],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "rootDir": "../"
+  },
+  "include": ["**/*.test.ts", "**/*.spec.ts", "../src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
