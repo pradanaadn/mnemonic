@@ -1,3 +1,18 @@
+# [1.5.0](https://github.com/pradanaadn/mnemonic/compare/v1.4.0...v1.5.0) (2025-09-22)
+
+
+### Bug Fixes
+
+* remove duplicate export of Users schema in index file ([4472258](https://github.com/pradanaadn/mnemonic/commit/447225859ba4fb09c7f4abb0527c37ac7a87b75d))
+
+
+### Features
+
+* add database schema exports to index file ([8d440f0](https://github.com/pradanaadn/mnemonic/commit/8d440f016ddaf0df439b6bdf343e4244fdf70729))
+* add unit tests for PasswordService with comprehensive test cases ([9171861](https://github.com/pradanaadn/mnemonic/commit/9171861fb82c7692b832e28dbb9c026207815b30))
+* implement PasswordService with hashing and verification methods, ([396340a](https://github.com/pradanaadn/mnemonic/commit/396340aa4dab774b9823118fdf0cb4c2632d20c4))
+* update package version to 1.4.0 and add argon2 for password hashing ([2467f41](https://github.com/pradanaadn/mnemonic/commit/2467f41b9cd676dd9a0697b9184e0cbd09cdacd9))
+
 # [1.4.0](https://github.com/pradanaadn/mnemonic/compare/v1.3.0...v1.4.0) (2025-09-20)
 
 
