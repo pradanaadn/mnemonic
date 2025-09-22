@@ -30,7 +30,8 @@
     "baseUrl": "./src",
     "paths": {
       "@logger": ["libs/helper/logger"],
-      "@config": ["config/index"]
+      "@config": ["config/index"],
+      "@services": ["services"]
     }
   },
   "include": ["src/**/*", "*.js"],
