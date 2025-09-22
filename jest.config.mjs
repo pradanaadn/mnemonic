@@ -1,7 +1,4 @@
-import { defaults } from 'jest-config';
-
 export default {
-  ...defaults,
   testEnvironment: 'node',
   preset: 'ts-jest',
   transform: {
@@ -15,5 +12,4 @@ export default {
     '^@config$': '<rootDir>/src/config/index',
     '^@/(.*)$': '<rootDir>/src/$1',
   },
-  roots: ['<rootDir>/src', '<rootDir>/tests'],
 };
