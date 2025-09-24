@@ -31,7 +31,12 @@
     "paths": {
       "@logger": ["libs/helper/logger"],
       "@config": ["config/index"],
-      "@services": ["services"]
+      "@services": ["services"],
+      "@db": ["db/index.ts"],
+      "@type/*": ["core/types/*"],
+      "@interfaces/*": ["core/interfaces/*"],
+      "@schema": ["core/schema/index.ts"],
+      "@repositories": ["repositories/index.ts"]
     }
   },
   "include": ["src/**/*", "*.js"],
