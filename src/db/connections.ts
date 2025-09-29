@@ -10,4 +10,5 @@ const pool = new Pool({
   database: dbConfig.database,
 });
 const db = drizzle({ client: pool });
-export { db, pool };
+type DB = typeof db;
+export { db, pool, DB };

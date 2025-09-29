@@ -15,48 +15,6 @@ services:
     networks:
       - mnemonic-network
 
-  pgadmin:
-    image: dpage/pgadmin4:latest
-    container_name: pgadmin-mnemonic
-    env_file:
-      - .env
-    environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
-      PGADMIN_CONFIG_SERVER_MODE: 'False'
-      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: 'False'
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-    volumes:
-      - ./pgadmin/servers.json:/pgadmin4/servers.json    
-    ports:
-      - "5433:80"
-    depends_on:
-      - postgres
-    networks:
-      - mnemonic-network
-    init: true
-    # Automatically generate servers.json on container start. Auto connect to PostgreSQL.
-    command: >
-      sh -c "
-        cat > /pgadmin4/servers.json << EOF
-        {
-          \"Servers\": {
-            \"1\": {
-              \"Name\": \"Mnemonic Database\",
-              \"Group\": \"Servers\",
-              \"Host\": \"postgres-mnemonic\",
-              \"Port\": 5432,
-              \"MaintenanceDB\": \"$${POSTGRES_DB}\",
-              \"Username\": \"$${POSTGRES_USER}\",
-              \"SSLMode\": \"prefer\"
-            }
-          }
-        }
-        EOF
-        && exec /entrypoint.sh
-      "
-
 volumes:
   pgdata:
 
