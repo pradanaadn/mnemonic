@@ -32,7 +32,6 @@ export class UserRepository implements IUserRepository {
           name: user.name,
           username: user.username,
           password: user.password,
-          roleId: user.roleId,
         })
         .returning();
       if (!newUser) {

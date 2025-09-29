@@ -4,13 +4,17 @@ import { drizzle } from 'drizzle-orm/node-postgres';
 import { Client } from 'pg';
 import { migrate } from 'drizzle-orm/node-postgres/migrator';
 import { PostgreSqlContainer } from '@testcontainers/postgresql';
+import { UserRepository } from '@repositories';
+import { UserDataType } from '@schema';
+import { randomUUID } from 'crypto';
 
-describe('PostgreSQL with Drizzle', () => {
+describe('UserRepository - findById', () => {
   let db: any;
   let client: any;
+  let postgresContainer: any;
+  let userRepository: UserRepository;
   jest.setTimeout(60000);
 
-  let postgresContainer;
   beforeEach(async () => {
     postgresContainer = await new PostgreSqlContainer(
       'postgres:17-alpine',
@@ -21,19 +25,27 @@ describe('PostgreSQL with Drizzle', () => {
     await client.connect();
     db = drizzle(client, { schema });
     await migrate(db, { migrationsFolder: './drizzle' });
+    userRepository = new UserRepository();
   });
 
   afterEach(async () => {
     await client.end();
+    await postgresContainer.stop();
   });
 
-  it('should have created the expected tables', async () => {
-    const result = await db.execute(
-      "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY table_name",
-    );
-    const tableNames = result.rows.map((row: any) => row.table_name);
-    expect(tableNames).toEqual(
-      expect.arrayContaining(['users', 'roles', 'notes', 'tags', 'notes_tags']),
-    );
+  it('should find an existing user by ID', async () => {
+    const userData: UserDataType = {
+      name: 'Test User',
+      username: 'testuser',
+      password: 'password123',
+    };
+    const createdUser = await userRepository.create(userData, db);
+    const foundUser = await userRepository.findById(createdUser.id, db);
+    expect(foundUser).toEqual(createdUser);
+  });
+
+  it('should return null for a non-existing user ID', async () => {
+    const foundUser = await userRepository.findById(randomUUID(), db); // Use a valid UUID that's unlikely to exist
+    expect(foundUser).toBeNull();
   });
 });

@@ -16,15 +16,6 @@ CREATE TABLE "notes" (
 	"updated_at" timestamp DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE "roles" (
-	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
-	"name" varchar(256) NOT NULL,
-	"description" varchar(512),
-	"created_at" timestamp DEFAULT now() NOT NULL,
-	"updated_at" timestamp DEFAULT now() NOT NULL,
-	CONSTRAINT "roles_name_unique" UNIQUE("name")
-);
---> statement-breakpoint
 CREATE TABLE "tags" (
 	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"name" varchar(100) NOT NULL,
@@ -38,7 +29,6 @@ CREATE TABLE "users" (
 	"name" varchar(256) NOT NULL,
 	"username" varchar(256) NOT NULL,
 	"password" varchar(512) NOT NULL,
-	"role_id" uuid NOT NULL,
 	"created_at" timestamp DEFAULT now() NOT NULL,
 	"updated_at" timestamp DEFAULT now() NOT NULL,
 	CONSTRAINT "users_username_unique" UNIQUE("username")
@@ -47,7 +37,6 @@ CREATE TABLE "users" (
 ALTER TABLE "notes_tags" ADD CONSTRAINT "notes_tags_note_id_notes_id_fk" FOREIGN KEY ("note_id") REFERENCES "public"."notes"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "notes_tags" ADD CONSTRAINT "notes_tags_tag_id_tags_id_fk" FOREIGN KEY ("tag_id") REFERENCES "public"."tags"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "notes" ADD CONSTRAINT "notes_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."users"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "users" ADD CONSTRAINT "users_role_id_roles_id_fk" FOREIGN KEY ("role_id") REFERENCES "public"."roles"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
 CREATE INDEX "note_tags_note_idx" ON "notes_tags" USING btree ("note_id");--> statement-breakpoint
 CREATE INDEX "note_tags_tag_idx" ON "notes_tags" USING btree ("tag_id");--> statement-breakpoint
 CREATE INDEX "notes_user_id_idx" ON "notes" USING btree ("user_id");--> statement-breakpoint
@@ -56,5 +45,4 @@ CREATE INDEX "notes_user_created_idx" ON "notes" USING btree ("user_id","created
 CREATE INDEX "notes_user_title_idx" ON "notes" USING btree ("user_id","title");--> statement-breakpoint
 CREATE INDEX "update_visibility_idx" ON "notes" USING btree ("updated_at","visibility");--> statement-breakpoint
 CREATE INDEX "tags_name_idx" ON "tags" USING btree ("name");--> statement-breakpoint
-CREATE INDEX "users_username_idx" ON "users" USING btree ("username");--> statement-breakpoint
-CREATE INDEX "users_role_username_idx" ON "users" USING btree ("role_id","username");
+CREATE INDEX "users_username_idx" ON "users" USING btree ("username");

@@ -5,7 +5,7 @@ export const NewUser = z
     name: z.string(),
     username: z.string(),
     password: z.string(),
-    roleId: z.string(),
+    // roleId: z.string(),
   })
   .refine(
     (data) =>
@@ -20,7 +20,7 @@ export const UserRecord = z.object({
   id: z.string(),
   name: z.string(),
   password: z.string(),
-  roleId: z.string(),
+  // roleId: z.string(),
   createdAt: z.date(),
   updatedAt: z.date,
 });
