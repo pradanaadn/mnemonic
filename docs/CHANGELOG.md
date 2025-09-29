@@ -1,3 +1,14 @@
+# [1.6.0](https://github.com/pradanaadn/mnemonic/compare/v1.5.0...v1.6.0) (2025-09-29)
+
+
+### Features
+
+* add GitHub Actions workflow for linting and testing on pull requests ([2d522b4](https://github.com/pradanaadn/mnemonic/commit/2d522b4881d1bce859a8fd5d2d72f5161e1c5f04))
+* add initial database schema for notes, tags, and users with foreign key constraints ([4995a75](https://github.com/pradanaadn/mnemonic/commit/4995a7552447e6fd70533e97b846c9f242a4c317))
+* add Jest configuration and update TypeScript paths for new modules ([dbedb21](https://github.com/pradanaadn/mnemonic/commit/dbedb21cff425a5fb354e9f2a9f4e0aaaad2452c))
+* add PostgreSQL testing with Testcontainers and Drizzle ORM ([6b59c78](https://github.com/pradanaadn/mnemonic/commit/6b59c787387dc04e2c507f7ce13f179d9cd5c680))
+* implement user repository interface and schema with CRUD operations ([fc280ad](https://github.com/pradanaadn/mnemonic/commit/fc280adeb875a3fd94e4db701218fad6b66cc9d7))
+
 # [1.5.0](https://github.com/pradanaadn/mnemonic/compare/v1.4.0...v1.5.0) (2025-09-22)
 
 
