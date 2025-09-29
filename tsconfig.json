@@ -33,13 +33,14 @@
       "@config": ["config/index"],
       "@services": ["services"],
       "@db": ["db/index.ts"],
+      "@db/schema": ["db/schemas/index.ts"],
       "@type/*": ["core/types/*"],
       "@interfaces/*": ["core/interfaces/*"],
       "@schema": ["core/schema/index.ts"],
       "@repositories": ["repositories/index.ts"]
     }
   },
-  "include": ["src/**/*", "*.js"],
+  "include": ["src/**/*", "*.js", "babel.config.cjs"],
   "exclude": [
     "node_modules",
     "dist",

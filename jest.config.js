@@ -1,8 +1,7 @@
 export default {
   testEnvironment: 'node',
-  preset: 'ts-jest',
   transform: {
-    '^.+\\.ts$': 'ts-jest',
+    '^.+\\.ts$': 'babel-jest',
   },
   moduleFileExtensions: ['ts', 'js', 'json'],
   testMatch: ['**/*.test.ts', '**/*.spec.ts'],
