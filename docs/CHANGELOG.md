@@ -1,3 +1,22 @@
+# [1.7.0](https://github.com/pradanaadn/mnemonic/compare/v1.6.0...v1.7.0) (2025-10-01)
+
+
+### Bug Fixes
+
+* restructure GitHub Actions workflow to include linting and testing steps before release ([ce9fd01](https://github.com/pradanaadn/mnemonic/commit/ce9fd0121f840163875c915029c74c06a09dba4e))
+* simplify semantic-release command by removing unnecessary plugins ([9a48aaf](https://github.com/pradanaadn/mnemonic/commit/9a48aafde33e0db542a00f64cb2726d5e165f55c))
+* update Node.js version to 22 in GitHub Actions workflows ([614ec7a](https://github.com/pradanaadn/mnemonic/commit/614ec7a5e73485cf9b41515cfcad20f352d13ba5))
+
+
+### Features
+
+* add authentication configuration, controller, and schema files ([8029e50](https://github.com/pradanaadn/mnemonic/commit/8029e50957d9b422c972812e0b8f2bfddf23a8bc))
+* add UserService export and implement unit tests for registration and login functionality ([5da7c25](https://github.com/pradanaadn/mnemonic/commit/5da7c25602b82f1055fed3bd30cd0b99a0b6b900))
+* implement TokenService with generate and validate methods ([3e84adb](https://github.com/pradanaadn/mnemonic/commit/3e84adb86a35325e4af75a2872e72c956d75b05b))
+* implement user service with registration and login functionality, ([ffcad71](https://github.com/pradanaadn/mnemonic/commit/ffcad71326e24daff2622f4d543345e2ef61f251))
+* refactor password service by extracting interface and removing implementation ([04316a8](https://github.com/pradanaadn/mnemonic/commit/04316a8d4671f020af58a665ecb867bbe03ecc43))
+* update dependencies and version to 1.6.0, add jsonwebtoken and ms packages ([cd08f46](https://github.com/pradanaadn/mnemonic/commit/cd08f4645225bd5af5b16223fc323f277ef6688b))
+
 # [1.6.0](https://github.com/pradanaadn/mnemonic/compare/v1.5.0...v1.6.0) (2025-09-29)
 
 
