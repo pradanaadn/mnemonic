@@ -5,7 +5,6 @@ export const NewUser = z
     name: z.string(),
     username: z.string(),
     password: z.string(),
-    // roleId: z.string(),
   })
   .refine(
     (data) =>
@@ -16,13 +15,22 @@ export const NewUser = z
       path: ['password'],
     },
   );
+
 export const UserRecord = z.object({
   id: z.string(),
   name: z.string(),
+  username: z.string(),
   password: z.string(),
-  // roleId: z.string(),
   createdAt: z.date(),
   updatedAt: z.date,
 });
+
+export const UserIdentity = z.object({
+  id: z.string(),
+  name: z.string(),
+  username: z.string(),
+});
+
 export type UserDataType = z.infer<typeof NewUser>;
 export type UserRecordType = z.infer<typeof UserRecord>;
+export type UserIdentityType = z.infer<typeof UserIdentity>;
