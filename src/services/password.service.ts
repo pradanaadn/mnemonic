@@ -1,10 +1,6 @@
 import argon2 from 'argon2';
 import logger from '@logger';
-
-export interface IPasswordService {
-  hash(password: string): Promise<string>;
-  verify(hashedPassword: string, plainPassword: string): Promise<boolean>;
-}
+import { IPasswordService } from '@interfaces/password.interface';
 
 export class PasswordService implements IPasswordService {
   async hash(password: string): Promise<string> {
@@ -44,7 +40,7 @@ export class PasswordService implements IPasswordService {
           error.message === 'Password cannot be empty')
       ) {
         logger.error(`Password verification failed: ${error.message}`);
-        throw error; // Re-throw validation errors as-is
+        throw error;
       }
       logger.error(`Password verification failed: ${error}`);
       throw new Error('Failed to verify password');

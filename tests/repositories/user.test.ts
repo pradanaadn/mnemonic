@@ -48,4 +48,22 @@ describe('UserRepository - findById', () => {
     const foundUser = await userRepository.findById(randomUUID(), db); // Use a valid UUID that's unlikely to exist
     expect(foundUser).toBeNull();
   });
+
+  it('should find an existing user by Username', async () => {
+    const userData: UserDataType = {
+      name: 'Test User 2',
+      username: 'testuser2',
+      password: 'password123',
+    };
+    const createdUser = await userRepository.create(userData, db);
+    const foundUser = await userRepository.findByUsername(
+      createdUser.username,
+      db,
+    );
+    expect(foundUser).toEqual(createdUser);
+  });
+  it('should return null for a non-existing username', async () => {
+    const foundUser = await userRepository.findByUsername('RandomUsername', db);
+    expect(foundUser).toBeNull();
+  });
 });
