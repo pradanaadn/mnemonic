@@ -12,6 +12,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'  
       - name: Install dependencies
         run: npm ci
       - name: Lint
@@ -20,7 +25,7 @@ jobs:
         run: npm test
 
   release:
-    needs: lint-and-test  
+    needs: lint-and-test
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -32,8 +37,16 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'  
+      - name: Install dependencies
+        run: npm ci
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HUSKY: 0
-        run: npm run semantic-release
+        run: npx semantic-release --plugins @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/npm @semantic-release/github
+        continue-on-error: false  
