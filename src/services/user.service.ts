@@ -53,6 +53,6 @@ export class UserService implements IUserService {
       username: userRecord.username,
     };
     const token = tokenService.generate(authPayload, secretKey, expiredTime);
-    return TokenPayload.parse({ user: authPayload, token: token });
+    return TokenPayload.parse({ userData: authPayload, token: token });
   }
 }
